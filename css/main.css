@@ -1,0 +1,27 @@
+
+body {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+table, td {
+    border: 1px solid black;
+  }
+
+td {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+  }
+
+td:hover {
+    cursor: pointer;
+}
+
+.time {
+    margin-bottom: 10px;
+}
