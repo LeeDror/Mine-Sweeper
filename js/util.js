@@ -21,6 +21,7 @@ function shuffle(array) {
 
 function secondCount() {
     var elTime = document.querySelector('.time span');
-    gGame.secsPassed += 1;    
+    gGame.secsPassed += 1;
     elTime.innerText = gGame.secsPassed;
+    console.log(gGame);    
 }

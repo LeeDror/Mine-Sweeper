@@ -17,6 +17,27 @@ var gGame = {
     secsPassed: 0
 };
 
+function changeLevel(level) {
+    switch (level) {
+        case 1: {
+            gLevel.size = 4;
+            gLevel.mines = 2;
+            break;
+        }
+        case 2: {
+            gLevel.size = 8;
+            gLevel.mines = 12;
+            break;
+        }
+        case 3: {
+            gLevel.size = 12;
+            gLevel.mines = 30;
+            break;
+        }
+    }
+    initGame();
+}
+
 function initGame() {
     gGame.secsPassed;
     gGame.shownCount = 0;
@@ -30,7 +51,7 @@ function initGame() {
 
 function checkGameOver() {
     //gGame.isOn = false;
-    clearInterval(gGameInterval);
+    //clearInterval(gGameInterval);
 }
 
 function renderBoard(board) {
@@ -51,6 +72,7 @@ function cellMarked(i, j) {
     if (!gGame.shownCount && !gGame.markedCount) {
         gGame.isOn = true;
         gGameInterval = setInterval(secondCount, 1000);
+        console.log('secondCount');        
     }
     if (!gGame.isOn) return;
     var randomCellIdx = { i: i, j: j };
@@ -78,20 +100,19 @@ function cellClicked(elCell, i, j) {
         console.log('first cell')
     }
     // game over
-
     if (!gGame.isOn) return;
 
     // cell is marked
     if (cell.isMarked) return;
-    console.log('cell is isMarked', cell.isMarked);
+    //console.log('cell is isMarked', cell.isMarked);
     // cell is shown
     if (cell.isShown) return;
-    console.log('cell is shown', cell.isShown);
+    //console.log('cell is shown', cell.isShown);
 
     // MODEL
     cell.isShown = true;
     gGame.shownCount++;
-    console.log('count++');
+    //console.log('count++');
 
     // mine in cell
     if (cell.isMine) {
@@ -104,7 +125,7 @@ function cellClicked(elCell, i, j) {
         elCell.innerHTML = '';
         expandShown(gBoard, elCell, i, j);
         checkGameOver(false);
-        console.log('no negs');
+        //console.log('no negs');
         return;
     }
     // negs
@@ -132,7 +153,7 @@ function expandShown(board, elCell, cellI, cellJ) {
             else {
                 elCell = document.querySelector(`[data-i="${i}"][data-j="${j}"]`);
                 cellClicked(elCell, i, j);
-                console.log(board[i][j]);
+                //console.log(board[i][j]);
             }
         }
     }

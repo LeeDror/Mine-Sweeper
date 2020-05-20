@@ -1,11 +1,37 @@
 
 body {
     text-align: center;
+    background-image: url('/img/back2.jpg');
+}
+
+h1 {
+    font-size: 70px;
+    font-style: bold;
+}
+
+.levels { 
+    background-color: purple;
+    color: whitesmoke;
+    padding: 10px;
+    margin: 20px;
+    font-size: 25px;
+    border-radius: 40px;
+}
+
+.time { 
+    background-color: purple;
+    color: whitesmoke;
+    padding: 10px;
+    margin: 20px;
+    font-size: 20px;
+    border-radius: 25px;
 }
 
 table {
     border-collapse: collapse;
     margin: auto;
+    background-color: whitesmoke;
+    border: 10px, black;
 }
 
 table, td {
@@ -13,15 +39,11 @@ table, td {
   }
 
 td {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     text-align: center;
   }
 
 td:hover {
     cursor: pointer;
-}
-
-.time {
-    margin-bottom: 10px;
 }

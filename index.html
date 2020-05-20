@@ -10,8 +10,16 @@
 <body onload="initGame()">
 
     <h1>Mine Sweeper</h1>
+    <div class="levels"><span class="head">levels</span>
+        <br>
+        <span>
+            <input class="level1" type="radio" name="level" onclick="changeLevel(1)">Eazy</input>
+            <input class=" level2" type="radio" name="level" onclick="changeLevel(2)">Hard</input>
+            <input class=" level3" type="radio" name="level" onclick="changeLevel(3)">Extreme!</input>
+        </span>
+    </div>
 
-    <div class="time">Game Time: <span>0</span></div>
+    <div class=" time">Game Time: <span>0</span></div>
 
     <table>
         <tbody class="board"></tbody>
