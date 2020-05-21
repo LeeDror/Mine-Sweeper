@@ -1,7 +1,8 @@
 
 body {
     text-align: center;
-    background-image: url('/img/back2.jpg');
+/*     background-image: url('/img/back2.jpg'); */
+    background-image: url('img/back2.jpg');
     font-family:'Roboto',sans-serif;
 }
 
